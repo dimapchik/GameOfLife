@@ -1002,7 +1002,6 @@ MonoBehaviour:
   closeWinnerPanel: {fileID: 1264536950}
   winnerPanelScore: {fileID: 1626934468}
   winnerPanelTitle: {fileID: 2001737619}
-  speedUpdate: 1
   speedSlider: {fileID: 542751132}
   startButton: {fileID: 1380170786}
   pauseButton: {fileID: 826318891}
@@ -2173,8 +2172,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 2111640609}
   m_HandleRect: {fileID: 490371613}
   m_Direction: 0
-  m_MinValue: 0.01
-  m_MaxValue: 1
+  m_MinValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
