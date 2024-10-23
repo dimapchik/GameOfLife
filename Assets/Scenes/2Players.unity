@@ -1259,6 +1259,7 @@ MonoBehaviour:
   patterns:
   - {fileID: 11400000, guid: 4dff3e64dc64830448519666271a567f, type: 2}
   - {fileID: 11400000, guid: e179f91acb9bdea499ca260fcda1bf10, type: 2}
+  - {fileID: 11400000, guid: 8956d618e5c00c762b6a0ddaadbd2a20, type: 2}
   currentPatternName: 
   isPlacingPattern: 0
   countAlive: 

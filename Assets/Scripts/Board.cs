@@ -72,8 +72,8 @@ public class Board : MonoBehaviour
                 for (int x = -1; x < 2; ++x) {
                     for (int y = -1; y < 2; ++y) {
                         Vector3Int newCell = cell + new Vector3Int(x, y);
-                        if (-maxSizeField / 2 < newCell.x && newCell.x < maxSizeField / 2 && -maxSizeField / 2 < newCell.y && newCell.y < maxSizeField / 2)
-                        {
+                        if (-maxSizeField / 2 < newCell.x && newCell.x < maxSizeField / 2 &&
+                        -maxSizeField / 2 < newCell.y && newCell.y < maxSizeField / 2) {
                             cellsToCheck.Add(newCell);
                         }
                     }
@@ -187,7 +187,8 @@ public class Board : MonoBehaviour
                     Vector3Int new_cell = new Vector3Int(x + offset.x, y + offset.y, 0);
                     if (currentState.GetTile(new_cell) == aliveTiles[1 - simMabager.curr_player] ||
                     currentState.GetTile(new_cell) == aliveTiles[simMabager.curr_player] ||
-                    currentState.GetTile(new_cell) == borderTile) return;
+                    currentState.GetTile(new_cell) == borderTile || -maxSizeField / 2 > new_cell.x ||
+                    new_cell.x > maxSizeField / 2 || -maxSizeField / 2 > new_cell.y || new_cell.y > maxSizeField / 2) return;
                 }
                 if (pat.cells.Length > simMabager.max_start_square - countAlive[simMabager.curr_player]
                 && simMabager.max_player == 2) {
