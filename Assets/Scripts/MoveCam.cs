@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class moveKeys : MonoBehaviour
 {
-    [SerializeField]private float speed = 3.0f;
+    [SerializeField]private float speed = 5.0f;
     [SerializeField]private float scrollSpeed = 10.0f;
 
     private Camera zoom;
@@ -12,7 +12,7 @@ public class moveKeys : MonoBehaviour
     void Start() {
         zoom = Camera.main;
     }
-    // Update is called once per frame
+
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
