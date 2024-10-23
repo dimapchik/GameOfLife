@@ -140,8 +140,8 @@ public class Board : MonoBehaviour
 
     public void RandomFill() {
         Clear();
-        for (int i = -maxSizeField / 2 + 1; i < maxSizeField / 2 - 1; ++i) {
-            for (int j = -maxSizeField / 2 + 1; j < maxSizeField / 2 - 1; ++j) {
+        for (int i = -maxSizeField / 2 + 1; i < maxSizeField / 2; ++i) {
+            for (int j = -maxSizeField / 2 + 1; j < maxSizeField / 2; ++j) {
                 int isFill = Random.Range(0, 2);
                 if (isFill == 1) {
                     Vector3Int cell = new Vector3Int(i, j, 0);
