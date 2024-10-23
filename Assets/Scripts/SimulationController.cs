@@ -58,7 +58,7 @@ public class SimulationManager : MonoBehaviour
         }
         sizeInputField.onValueChanged.AddListener(UpdateFieldSize);
         
-        max_start_square = (board.maxSizeField / 2) * (board.maxSizeField / 2);
+        max_start_square = (board.maxSizeField / 2) * 3;
         UpdateText();
         UpdateSpeedText();
     }
@@ -82,6 +82,9 @@ public class SimulationManager : MonoBehaviour
             int x = Mathf.FloorToInt(worldPos.x);
             int y = Mathf.FloorToInt(worldPos.y);
             board.PlacePattern(x, y);
+            Vector3Int currentCell = new Vector3Int(x, y, 0);
+            lastCell = currentCell;
+            board.isPlacingPattern = false;
             return;
         } else if (Input.GetMouseButton(0) && !board.isPlacingPattern) {
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
