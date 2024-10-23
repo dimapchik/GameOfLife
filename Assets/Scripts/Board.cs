@@ -51,7 +51,7 @@ public class Board : MonoBehaviour
         }
     }
     public void AddOnceSquare(int x, int y) {
-        Vector3Int cell = new Vector3Int(x, y); 
+        Vector3Int cell = new Vector3Int(x, y, 0);
         bool is_alive = IsAlive(cell);
         if (is_alive && aliveTiles[simMabager.curr_player] == currentState.GetTile(cell)) {
             aliveCells[simMabager.curr_player].Remove(cell);
@@ -59,6 +59,7 @@ public class Board : MonoBehaviour
             if (simMabager.max_player == 1) return;
             --countAlive[simMabager.curr_player];
         } else if (!is_alive && countAlive[simMabager.curr_player] < simMabager.max_start_square){
+            // Debug.Log("aaaaaaaaaaaaa");
             aliveCells[simMabager.curr_player].Add(cell);
             currentState.SetTile(cell, aliveTiles[simMabager.curr_player]);
             if (simMabager.max_player == 1) return;

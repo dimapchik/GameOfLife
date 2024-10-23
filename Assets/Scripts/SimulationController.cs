@@ -37,7 +37,7 @@ public class SimulationManager : MonoBehaviour
 
     public int max_player = 1;
     public int curr_player = 0;
-    public int max_start_square;
+    public int max_start_square = 1000 * 1000;
 
     private Vector3Int lastCell = new Vector3Int(0, 0, 0);
 
@@ -49,16 +49,16 @@ public class SimulationManager : MonoBehaviour
         randomFillButton.onClick.AddListener(RandomFill);
         clearButton.onClick.AddListener(ClearBoard);
         mainMenuButton.onClick.AddListener(GoToMenu);
+        max_start_square = 1000 * 1000;
         if (max_player == 2) {
             p1.onClick.AddListener(ChangeToP1);
             p2.onClick.AddListener(ChangeToP2);
             winnerMainMenuButton.onClick.AddListener(GoToMenu);
             closeWinnerPanel.onClick.AddListener(HidePopup);
             HidePopup();
+            max_start_square = (board.maxSizeField / 2) * 3;
         }
         sizeInputField.onValueChanged.AddListener(UpdateFieldSize);
-        
-        max_start_square = (board.maxSizeField / 2) * 3;
         UpdateText();
         UpdateSpeedText();
     }
@@ -97,6 +97,7 @@ public class SimulationManager : MonoBehaviour
 
     public void StartSimulation() {
         isRunning = true;
+        board.isPlacingPattern = false;
     }
 
     public void PauseSimulation() {
@@ -133,7 +134,6 @@ public class SimulationManager : MonoBehaviour
 
     private void UpdateText() {
         if (max_player == 1) {
-            max_start_square = board.maxSizeField / 2;
             return;
         }
         leastP1.text = "Least P1 squares: " + (max_start_square - board.countAlive[0]).ToString();
@@ -144,9 +144,9 @@ public class SimulationManager : MonoBehaviour
 
     public void UpdateFieldSize(string value) {
         if (isRunning) return;
-        if (int.TryParse(value, out int newSize))
-        {
+        if (int.TryParse(value, out int newSize)) {
             board.SetFieldSize(newSize);
+            if (max_player == 2) max_start_square = newSize * 3 / 2;
         }
     }
 

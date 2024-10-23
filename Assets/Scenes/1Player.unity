@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 222136142}
   - component: {fileID: 222136141}
   - component: {fileID: 222136140}
-  - component: {fileID: 222136146}
+  - component: {fileID: 222136144}
   m_Layer: 5
   m_Name: Simulate control
   m_TagString: Untagged
@@ -655,7 +655,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &222136146
+--- !u!114 &222136144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -688,7 +688,7 @@ MonoBehaviour:
   p2: {fileID: 0}
   max_player: 1
   curr_player: 0
-  max_start_square: 0
+  max_start_square: 1000000
 --- !u!1 &239926898
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +879,7 @@ MonoBehaviour:
   deadTile: {fileID: 11400000, guid: cc1953e83a739ca4aa6e7af98b8d0deb, type: 2}
   borderTile: {fileID: 11400000, guid: bb65613a006c5c84e92e6e0a8c9bda47, type: 2}
   maxSizeField: 50
-  simMabager: {fileID: 222136146}
+  simMabager: {fileID: 222136144}
   buttonPrefab: {fileID: 8093681097424003144, guid: 2293c4df20eb9474998696b5ea0650a5, type: 3}
   contentPanel: {fileID: 2011496483}
   patterns:
