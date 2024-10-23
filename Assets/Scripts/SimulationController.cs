@@ -58,7 +58,7 @@ public class SimulationManager : MonoBehaviour
         }
         sizeInputField.onValueChanged.AddListener(UpdateFieldSize);
         
-        max_start_square = board.maxSizeField / 2;
+        max_start_square = (board.maxSizeField / 2) * (board.maxSizeField / 2);
         UpdateText();
         UpdateSpeedText();
     }
